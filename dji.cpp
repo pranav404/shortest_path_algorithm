@@ -7,7 +7,7 @@ struct graphelement{
     int cost;
 };
 float prob(){						
-    return (float)(rand()%100)/100;		//Probability function
+    return (float)(rand()%100)/100;				//Probability function
 }
 struct nodes{							//node structure for the path stack
     int node;
@@ -106,7 +106,7 @@ void openset_stack::push(int x,int y,int cost){			//Push function for the open s
     start = new openset_node{x,y,cost,true,start};
     //cout<<"data pushed"<<start->from<<start->to<<start->cost<<start->status<<endl;
 }
-openset_node* openset_stack::strike_out(){		/* This function finds the minimum cost path between to nodes in a graph 
+openset_node* openset_stack::strike_out(){								/* This function finds the minimum cost path between to nodes in a graph 
 													then returns the type openset_node pointer which points to the open set 
 													element which has the from and to node information and the cost associated.
 													The term temp contains the data of the next minimum cost to be taken*/
@@ -125,7 +125,7 @@ openset_node* openset_stack::strike_out(){		/* This function finds the minimum c
     temp->status = false;
     return temp;
 }
-openset_stack::~openset_stack(){	/* This is the destructor for the open set class as we have 
+openset_stack::~openset_stack(){						/* This is the destructor for the open set class as we have 
 										created openset_nodes in the heap memory and this deletes them whenever 
 										the scope of this class ends*/
     openset_node* temp = start;
